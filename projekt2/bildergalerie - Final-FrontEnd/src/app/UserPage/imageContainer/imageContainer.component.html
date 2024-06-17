@@ -1,0 +1,19 @@
+<!-- Start Image Container-->
+<div class="img_container">
+
+  <!-- Load all Images-->
+  <div [ngClass]="item.cssClass" *ngFor="let item of imageListWithCssClasses" (click)="openModal(item.image)">
+    <img [src]="'data:' + item.image.type + ';base64,' + item.image.imageData" alt="">
+  </div>
+</div>
+
+
+
+ <!-- Modal for Image -->
+<div class="modal" *ngIf="showModal">
+  <div class="modal-content">
+    <span class="close-button" (click)="closeModal()">&times;</span>
+    <img class="img-modal" [src]="'data:' + selectedImage.type + ';base64,' + selectedImage.imageData" alt="">
+    <button class="del-button" (click)="deleteImage()">Delete</button>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<!-- Login Form -->
+<div [ngClass]="activationClass" class="login">
+  <h2 class="loginHeader" (click)="moveLogin()">Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+    <!-- Username Input-->
+    <div class="input_field">
+      <input type="text" placeholder="Username" formControlName="username" [class.invalid]="loginForm.get('username')?.invalid &&
+          (loginForm.get('username')?.dirty ||
+          loginForm.get('username')?.touched || 
+        isSubmitted)
+          " />
+
+      <div *ngIf="loginForm.get('username')?.hasError('required') &&
+          (loginForm.get('username')?.dirty ||
+          loginForm.get('username')?.touched || 
+        isSubmitted)
+        " class="error">This Flield is required</div>
+    </div>
+
+
+    <!-- Password Input-->
+    <div class="input_field">
+      <input type="password" placeholder="Password" formControlName="password" [class.invalid]="loginForm.get('password')?.invalid &&
+          (loginForm.get('password')?.dirty ||
+          loginForm.get('password')?.touched || 
+        isSubmitted)
+          ">
+
+      <div *ngIf="loginForm.get('password')?.hasError('required') &&
+            (loginForm.get('password')?.dirty ||
+            loginForm.get('password')?.touched || 
+             isSubmitted)
+            " class="error">This Flield is required</div>
+
+
+    </div>
+
+    <!--Login Button -->
+    <button class="btn" type="submit">
+      Login
+    </button>
+
+  </form>
+</div>

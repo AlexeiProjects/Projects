@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/TerminPage.css}">
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+
+    <nav class=" navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand">TerminKalender</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-success" href="/createTermin">Termin Erstellen</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav" style="margin-left: auto;">
+                <li class="nav-item">
+                    <a class="nav-link text-danger" href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="wave">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                class="shape-fill"></path>
+        </svg>
+    </div>
+
+    <div class="parent">
+        <div class="div1">
+
+        </div>
+
+        <div class="div2">
+
+            <div class="container mt-5">
+                <div class="row">
+                    <div th:each="termin : ${termine}" class="col-md-4">
+                        <div class="card owncard">
+                            <div class="card-body">
+                                <h5 th:text="${termin.beschreibung}" class="card-title"></h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <strong>Datum:</strong>
+                                        <span th:text="${termin.tag}">Tag</span>.
+                                        <span th:text="${termin.monat}">Monat</span>.
+                                        <span th:text="${termin.jahr}">Jahr</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Uhrzeit:</strong>
+                                        <span th:text="${termin.uhrzeit + ':00'}">Tag</span>
+                                    </li>
+                                </ul>
+                                <div class="d-grid gap-2">
+                                    <form action="#" th:action="@{/termin/delete}" method="post" th:object="${termin}">
+                                        <input name="id" type="hidden" th:value="${termin.id}">
+                                        <input name="tag" type="hidden" th:value="${termin.tag}">
+                                        <input name="monat" type="hidden" th:value="${termin.monat}">
+                                        <input name="jahr" type="hidden" th:value="${termin.jahr}">
+                                        <input name="uhrzeit" type="hidden" th:value="${termin.uhrzeit}">
+                                        <input name="beschreibung" type="hidden" th:value="${termin.beschreibung}">
+                                        <input name="erstellerId" type="hidden" th:value="${termin.erstellerId}">
+                                        <button class="button-28" type="submit" name="deleteItem">Löschen</button>
+                                    </form>
+                                    <form action="#" th:action="@{/termin/editTerminPage}" method="post"
+                                        th:object="${termin}">
+                                        <input name="id" type="hidden" th:value="${termin.id}">
+                                        <input name="tag" type="hidden" th:value="${termin.tag}">
+                                        <input name="monat" type="hidden" th:value="${termin.monat}">
+                                        <input name="jahr" type="hidden" th:value="${termin.jahr}">
+                                        <input name="uhrzeit" type="hidden" th:value="${termin.uhrzeit}">
+                                        <input name="beschreibung" type="hidden" th:value="${termin.beschreibung}">
+                                        <input name="erstellerid" type="hidden" th:value="${termin.erstellerId}">
+                                        <button class="button-28" type="submit" name="editItem">Bearbeiten</button>
+                                    </form>
+                                    <button class="button-28" type="button" data-bs-toggle="modal"
+                                        data-bs-target="#einladungsModal" th:data-terminId="${termin.id}"
+                                        th:data-erstellerId="${termin.erstellerId}" onclick="getValue(this)">
+
+                                        Einladen
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+        <div class="div3">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Einladungen</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" th:each="einladung : ${einladungen}">
+                        <div class="col-md-12">
+                            <div class="card owncard">
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            <strong> 
+                                                <span th:text="${einladung.tag}">Tag</span>.
+                                                <span th:text="${einladung.monat}">Monat</span>.
+                                                <span th:text="${einladung.jahr}">Jahr</span></strong> 
+                                                um
+                                            <strong>
+                                                <span th:text="${einladung.uhrzeit + ':00'}">Tag</span>
+                                            </strong> von
+                                            <strong>
+                                                <span th:text="${einladung.erstellerName}"></span>
+                                            </strong>
+                                        </li>
+
+                                        <form action="#" th:action="@{/einladung/accept}" method="post" th:object="${einladungInformation}">
+                                            <input name="id" type="hidden" th:value="${einladung.id}">
+                                            <input name="tag" type="hidden" th:value="${einladung.tag}">
+                                            <input name="monat" type="hidden" th:value="${einladung.monat}">
+                                            <input name="jahr" type="hidden" th:value="${einladung.jahr}">
+                                            <input name="uhrzeit" type="hidden" th:value="${einladung.uhrzeit}">
+                                            <input name="beschreibung" type="hidden" th:value="${einladung.beschreibung}">
+                                            <input name="erstellerId" type="hidden" th:value="${einladung.erstellerId}">
+                                            <input name="erstellerName" type="hidden" th:value="${einladung.erstellerName}">
+                                            <input name="einladungsId" type="hidden" th:value="${einladung.einladungsId}">
+                                            <button class="accept" type="submit">Annehmen</button>
+                                        </form>
+                                        
+                                        <form action="#" th:action="@{/einladung/decline}" method="post" th:object="${einladungInformation}">
+                                            <input name="id" type="hidden" th:value="${einladung.id}">
+                                            <input name="tag" type="hidden" th:value="${einladung.tag}">
+                                            <input name="monat" type="hidden" th:value="${einladung.monat}">
+                                            <input name="jahr" type="hidden" th:value="${einladung.jahr}">
+                                            <input name="uhrzeit" type="hidden" th:value="${einladung.uhrzeit}">
+                                            <input name="beschreibung" type="hidden" th:value="${einladung.beschreibung}">
+                                            <input name="erstellerId" type="hidden" th:value="${einladung.erstellerId}">
+                                            <input name="erstellerName" type="hidden" th:value="${einladung.erstellerName}">
+                                            <input name="einladungsId" type="hidden" th:value="${einladung.einladungsId}">
+                                            <button class="deny" type="submit">Ablehen</button>
+                                        </form>                                  
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="modal fade" id="einladungsModal" tabindex="-1" aria-labelledby="einladungsModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="einladungsModalLabel">Benutzer einladen</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="#" th:action="@{einladung}" method="POST" th:object="${einladungForm}">
+                                <input type="hidden" th:field="*{terminId}" id="terminId">
+                                <input type="hidden" th:field="*{erstellnerId}" id="erstellerId">
+                                <div class="mb-3">
+                                    <label for="personenDropdown" class="form-label">Benutzer auswählen:</label>
+                                    <select class="form-select" id="personenDropdown" th:field="*{invitedId}">
+                                        <option th:each="user : ${users}" th:value="${user.id}" th:text="${user.name}">
+                                        </option>
+
+                                    </select>
+                                </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Abbrechen</button>
+                            <button type="submit" class="btn btn-primary">Einladen</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <script type="text/javascript" src="/js/TerminPage.js"></script>
+
+</body>
+
+</html>

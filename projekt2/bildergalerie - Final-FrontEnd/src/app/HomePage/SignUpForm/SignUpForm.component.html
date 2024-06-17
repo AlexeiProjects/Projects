@@ -1,0 +1,54 @@
+
+<!-- Sign-up Form -->
+<div [ngClass]="activationClass" class="signup">
+    <h2 class="signupHeader" (click)="moveSignUp()">Sign-up</h2>
+
+
+    <!-- Username Input-->
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+        <div class="input_field">
+            <input type="text" placeholder="Username" formControlName="username" [class.invalid]="signUpForm.get('username')?.invalid &&
+                (signUpForm.get('username')?.dirty ||
+                signUpForm.get('username')?.touched || 
+                isSubmitted)
+          " />
+            <div *ngIf="signUpForm.get('username')?.hasError('required') &&
+                    (signUpForm.get('username')?.dirty ||
+                    signUpForm.get('username')?.touched || 
+                    isSubmitted)" class="error">This Flield is required</div>
+        </div>
+
+        <!-- Password Input-->
+        <div class="input_field">
+            <input type="password" placeholder="Password" formControlName="password" [class.invalid]="signUpForm.get('password')?.invalid &&
+                (signUpForm.get('password')?.dirty ||
+                signUpForm.get('password')?.touched || 
+                isSubmitted)
+                ">
+
+            <div *ngIf="signUpForm.get('password')?.hasError('required') &&
+                (signUpForm.get('password')?.dirty ||
+                signUpForm.get('password')?.touched || 
+                isSubmitted)" class="error">This Flield is required</div>
+        </div>
+        
+
+        <!--Response Messages -->
+        <div class="register-response-container">
+            <div *ngIf="registerSuccess" class="register-success">
+                Register Erfolgreich
+            </div>
+            
+            <div *ngIf="registerFail" class="register-fail">
+                Username <strong>{{usernameFail}}</strong> ist schon vorhanden
+            </div>
+        </div>
+
+
+         <!--Sign-up Button -->
+        <button class="btn" type="submit">
+            Sign-up
+        </button>
+
+    </form>
+</div>

@@ -1,0 +1,23 @@
+.dashboard {
+    min-height: 100vh;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(44, 4, 75, 1) 15%, rgba(70, 7, 99, 1) 35%, rgba(74, 7, 103, 1) 66%, rgba(160, 53, 198, 1) 100%, rgba(0, 212, 255, 1) 100%);
+    font-family: "Inter", sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 70px 1fr;
+    grid-template-areas:
+        "header header"
+        "sidebar main";
+    gap: 15px;
+}
+
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: rgb(20, 19, 19);
+}
+
+.main {
+    grid-area: main;
+}

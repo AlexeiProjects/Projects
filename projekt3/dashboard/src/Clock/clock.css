@@ -1,0 +1,19 @@
+.clockContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock{
+    width: 60%;
+}
+.clockTime{
+
+    font-size: 90px;
+    font-weight: 500;
+    color: rgb(194, 193, 193);
+    cursor:default;
+    text-shadow: 3px 3px 5px hsl(0, 0%, 33%);
+}

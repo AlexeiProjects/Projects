@@ -1,0 +1,14 @@
+
+
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("C:/Users/Alexei/Documents/Aseprite/ocean_bg.png");
+    font-family: "Rubik", sans-serif;
+
+    z-index: 9999; /* Hoher Wert, um über andere Elemente zu liegen */
+  }

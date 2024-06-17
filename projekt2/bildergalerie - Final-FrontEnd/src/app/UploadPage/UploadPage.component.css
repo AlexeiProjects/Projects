@@ -1,0 +1,119 @@
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(144, 75, 159, 1) 54%, rgba(25, 130, 152, 1) 100%);
+    margin: 0;
+    font-family: "Rubik", sans-serif;
+}
+
+.upload_container {
+
+    max-width: 600px;
+    width: 100%;
+    max-height: 600px;
+    height: 100%;
+    padding: 30px;
+    border-radius: 30px;
+    background-color: rgb(29, 28, 28);
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+    box-sizing: content-box;
+}
+
+.upload_container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 100;
+}
+
+
+.image_preview {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-color: rgb(71, 70, 70);
+    margin-bottom: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all .3s ease;
+    font-size: 30px;
+}
+
+.image_preview:hover {
+    opacity: 0.4;
+}
+
+.image_preview h2 {
+    margin: 0;
+}
+
+.upload_icon {
+    height: 80%;
+    width: 50%;
+    font-size: 300px;
+}
+
+.btn_image {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    border-radius: 15px;
+    background-color: rgb(71, 70, 70);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all .3s ease;
+
+}
+
+
+.btn_image:hover {
+    background-color: #1988e3;
+    transform: translateX(20px);
+}
+
+.upload-Success{
+    display: block;
+    width: 50%;
+    padding: 16px;
+    margin-top: 20px;
+    background-color: rgb(22, 180, 22);
+    border-radius: 15px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+.upload-Fail{
+    display: block;
+    width: 50%;
+    padding: 16px;
+    margin-top: 20px;
+    background-color: rgb(197, 36, 36);
+    border-radius: 15px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}

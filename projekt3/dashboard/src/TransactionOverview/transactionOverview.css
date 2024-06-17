@@ -1,0 +1,55 @@
+.transacitonOverviewContainer{
+    width: 100%;
+    color: rgb(194, 193, 193);
+}
+
+.thrid-heading{
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.transactions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.transaction{
+    color: black;
+    font-size: 25px;
+    font-weight: 400;
+    width: 80%;
+    max-width: 600px;
+    background-color: white;
+    padding: 15px 20px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    box-shadow: 0 3px 4px rgba(31, 29, 29, 0.05);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    word-wrap: break-word;
+
+}
+
+.transction__text{
+    width: 80%;
+    word-wrap: break-word;
+}
+
+.transaction--expense{
+    border-right: 15px solid rgb(206, 26, 26);
+}
+
+.transaction--income{
+    border-right: 15px solid green;
+}
+

@@ -1,0 +1,45 @@
+.toToInputContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 40px;
+    background-color: rgb(225, 225, 223);
+    font-size: 18px;
+    border: 1px solid rgba(1,1,1,0.15);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 10px;
+
+}
+
+.totoInput{
+    font-size: 18px;
+    width: 100%;
+    background-color: rgb(225, 225, 223);
+    padding-left: 10px;
+   color: black;
+}
+
+.toDoBtn{
+    background-color: hsl(231, 54%, 45%);
+    width: 20%;
+    border-radius: 20px;
+    margin-right: 2px;
+    cursor: pointer;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    
+}
+
+.toDoBtn:hover{
+    width: 50%;
+    background-color: hsl(231, 78%, 55%);
+}   
+
+.toDoHeading{
+    font-size: 40px;
+    margin: 10px;
+    color: rgb(194, 193, 193);
+}
+

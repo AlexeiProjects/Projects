@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+
+<div class="main">
+  <div class="upload_container">
+      
+      <input type="file" #fileInput id="file" accept="image/*" (change)="onSelectedImage($event)" hidden>
+      <div class="image_preview" (click)="fileInput.click()">
+          <mat-icon class="upload_icon">
+            cloud_upload
+          </mat-icon>
+        <h2>Select Image</h2>
+        <img *ngIf="imageUrl" [src]="imageUrl" alt="Selected Image">
+      </div>
+      <button class="btn_image" (click)="UploadImage()">Upload Image</button>
+
+      <!-- Response Messages-->
+      <div *ngIf="uploadSucces" class="upload-Success">Upload Succes</div>
+      <div  *ngIf="uploadFail" class="upload-Fail">Upload Fail</div>
+  </div>
+</div>

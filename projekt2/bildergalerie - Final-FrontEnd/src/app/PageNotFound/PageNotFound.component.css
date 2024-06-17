@@ -1,0 +1,11 @@
+.PageNotFoundContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.PageNotFoundContainer p {
+    margin: 0;
+    font-size: 150px;
+}

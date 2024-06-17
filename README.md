@@ -1,7 +1,7 @@
-Projekte 
+#Projekte 
 
 
-Projekt 1 - TerminKalender
+##Projekt 1 - TerminKalender
 
 Technologien: 
  - Spring boot
@@ -30,7 +30,9 @@ Die Webanwendung ist nun unter http://localhost:8080 erreichbar
 
 
 
-Projekt 2 - Bildergalerie
+
+
+##Projekt 2 - Bildergalerie
 
 Technologien: 
  - Angular Frontend

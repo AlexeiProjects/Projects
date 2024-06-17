@@ -1,7 +1,7 @@
-**Projekte 
+# Projekte 
 
 
-##Projekt 1 - TerminKalender
+## Projekt 1 - TerminKalender
 
 Technologien: 
  - Spring boot
@@ -32,7 +32,7 @@ Die Webanwendung ist nun unter http://localhost:8080 erreichbar
 
 
 
-##Projekt 2 - Bildergalerie
+## Projekt 2 - Bildergalerie
 
 Technologien: 
  - Angular Frontend
@@ -61,3 +61,16 @@ Danach kann das Spring Projekt ausgeführ werden.
 Das Angular Projekt lässt mit dem Command "ng serve" starten
 Die Webanwendung ist nun unter http://localhost:4200 erreichbar
 
+## Projekt 3 - Dashboard
+
+Technologien: 
+ - React
+
+
+
+Beschreibung: 
+Dieses Projekt ist ein kleines React-Projekt, in dem ein Benutzer mehrere kleine UIs hat, z.B. eine To-Do-Liste und eine Zeitanzeige. Dieses Projekt dient als Übung zur Nutzung von React Hooks (useState, useEffect) und zum modularen Aufbau von UIs in React.
+
+Installation: 
+Command "npm run dev"
+Die Webanwendung ist nun unter  http://localhost:5173/ erreichbar

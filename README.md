@@ -67,6 +67,8 @@ Die Webanwendung ist nun unter http://localhost:4200 erreichbar
 
 ## Projekt 3 - Dashboard
 
+![Projekt3](https://github.com/AlexeiProjects/Projects/assets/173030812/baa51e16-5422-43eb-8a27-63a4c90d207f)
+
 Technologien: 
  - React
 

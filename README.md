@@ -3,6 +3,8 @@
 
 ## Projekt 1 - TerminKalender
 
+![Projekt1](https://github.com/AlexeiProjects/Projects/assets/173030812/aeaac56d-1314-410f-9d76-d6ab21ebeb3f)
+
 Technologien: 
  - Spring boot
  - Thymeleaf als Template Engine

@@ -36,6 +36,8 @@ Die Webanwendung ist nun unter http://localhost:8080 erreichbar
 
 ## Projekt 2 - Bildergalerie
 
+![Projekt2](https://github.com/AlexeiProjects/Projects/assets/173030812/3b865a7b-65f7-4bec-bb47-2ae36c5381a5)
+
 Technologien: 
  - Angular Frontend
  - Spring boot Backend

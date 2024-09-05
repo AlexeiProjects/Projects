@@ -67,6 +67,8 @@ Die Webanwendung ist nun unter http://localhost:4200 erreichbar
 
 ## Projekt 3 - Dashboard
 
+Aktuell handelt es sich bei diesem Projekt um ein Platzhalter-Projekt in React, das lediglich demonstrieren soll, dass ich die grundlegenden Kenntnisse von React anwenden kann. Derzeit arbeite ich an einem umfangreicheren Projekt mit Next.js und React, das dieses Projekt ersetzen wird.
+
 ![Projekt3](https://github.com/AlexeiProjects/Projects/assets/173030812/baa51e16-5422-43eb-8a27-63a4c90d207f)
 
 Technologien: 
